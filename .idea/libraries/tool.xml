@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="tool">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/tool/org.json.jar!/" />
+      <root url="jar://$PROJECT_DIR$/tool/commons-csv-1.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/tool/wiremock-standalone-2.19.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
