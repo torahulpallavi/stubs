@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+import jenkins.model.Jenkins
+
+echo "shell port =" $1
+
+chmod 777 $WORKSPACE/tool/wiremock-standalone-2.19.0.jar
+chmod 777 $WORKSPACE/tool/commons-csv-1.6.jar
+chmod 777 $WORKSPACE/commons-csv-1.6.jar
+chmod 777 $WORKSPACE/tool/org.json.jar
+chmod 777 $WORKSPACE/org.json.jar
+
+export JENKINS_NODE_COOKIE=dontKillMe
+export classpath=$WORKSPACE/out/production/classes:$WORKSPACE/tool/wiremock-standalone-2.19.0.jar:$WORKSPACE/tool/commons-csv-1.6.jar:$WORKSPACE/org.json.jar:$WORKSPACE/tool/org.json.jar
+export BUILD_ID=dontKillMe
+
+nohup java -DportNumer=$1 -classpath "$classpath" com.stub.framework.driver.mainDriver  &
+
+
